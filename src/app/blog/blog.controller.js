@@ -10,21 +10,26 @@
     var vm = this;
 
     vm.timelineView = true;
-
     vm.CurrentInstaUser = CurrentInstaUser;
     vm.currentUser = CurrentInstaUser.currentUser || {};
     vm.currentMedia = CurrentInstaUser.currentMedia ||{};
     vm.nextUrl = CurrentInstaUser.nextUrl || null;
     vm.FireBaseService = FireBaseService;
 
-    vm.loadMore = function () {
+
+
+    vm.loadMore = loadMore;
+    vm.searchUser =searchUser;
+    vm.changeUser =changeUser;
+      //--------------------
+    function loadMore() {
       InstagramApiServices.loadMore(vm.nextUrl).then(function (response) {
         Array.prototype.push.apply(vm.currentMedia, response.data);
         vm.nextUrl = response.pagination.next_url;
       })
-    };
+    }
 
-    vm.searchUser = function (username) {
+    function searchUser(username) {
       if (username === '') {
         return;
       } else {
@@ -33,15 +38,15 @@
             return response.data.slice(0, 19);
           });
       }
-    };
+    }
 
-    vm.changeUser = function (username) {
+     function changeUser(username) {
       if (angular.isUndefined(username) || username ===null) {
         return;
       } else {
         $state.go('/', {'instauser': username});
       }
-    };
+    }
 
   }
 })

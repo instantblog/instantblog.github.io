@@ -2,7 +2,7 @@
   <div ng-if="!isSmallScreen" class="row margin-0 full-width" ng-repeat="gallery in galleries track by $index">
     <div class="yy-blog-timeline-box" ng-class-odd="'right'" ng-class-even="'left'">
       <div class="clearfix">
-        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'EEE, MMM dd, yyyy, HH:mma'}}</div>
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy,EEEE, HH:mma'}}</div>
         <div class="yy-blog-timeline-index">#{{$index+1}}</div>
       </div>
       <div class="yy-blog-timeline-box-inner">
@@ -39,10 +39,10 @@
   </div>
 
 
-  <div ng-if=" isSmallScreen" class="row margin-0 full-width" ng-repeat="gallery in galleries track by $index">
-    <div class="yy-blog-timeline-box right">
+  <div ng-if="isSmallScreen" class="row margin-0 full-width" ng-repeat="gallery in galleries track by $index">
+    <div class="yy-blog-timeline-box right sm">
       <div class="clearfix">
-        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'EEE, MMM dd, yyyy, HH:mma'}}</div>
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy, EEEE, HH:mma'}}</div>
         <div class="yy-blog-timeline-index">#{{$index+1}}</div>
       </div>
       <div class="yy-blog-timeline-box-inner">
@@ -56,7 +56,7 @@
             </a>
           </div>
           <div class="yy-blog-timeline-image-container">
-            <a href=""><img class="full-width" ng-src="{{gallery.images.standard_resolution.url}}" alt=""/></a>
+            <a href=""><img class="full-width" ng-src="{{gallery.images.low_resolution.url}}" alt=""/></a>
           </div>
 
           <div class="gallery-image-caption">{{gallery.caption.text}}</div>

@@ -1,25 +1,26 @@
 'use strict';
 
 angular.module('instantblog')
-  .directive('blogTimeline', function ($window, $log) {
+  .directive('blogTimeline', function ($window,$log) {
     return {
       templateUrl: 'app/components/blog-timeline/blog-timeline.html',
       scope: {
         'galleries': '=galleries'
       },
       restrict: 'EA',
-      link: function (scope,element) {
-        var window = angular.element($window);
-        var width = $window.innerWidth;
+      link:function(scope){
+        scope.isSmallScreen =setSize();
 
-        scope.isSmallScreen = width < 600;
+        function setSize() {
+          if ($window.innerWidth < 767) {
+            return true;
+          } else {
+            return false;
+          }
+        }
 
-        window.on("resize", function () {
-          $log.log($window.innerWidth);
-          scope.isSmallScreen = width < 600;
-        });
-        scope.$on("$destroy", function () {
-          window.off("resize");
+        angular.element($window).bind("resize", function () {
+          scope.$apply(scope.isSmallScreen =setSize());
         });
       }
     };

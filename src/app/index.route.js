@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig() {
+  function routerConfig($locationProvider) {
   //function routerConfig($stateProvider, $urlRouterProvider) {
     //$stateProvider
     //  .state('about', {
@@ -17,6 +17,7 @@
     //  });
     //
     //$urlRouterProvider.otherwise('/about');
+    $locationProvider.html5Mode(true);
   }
 
 })();

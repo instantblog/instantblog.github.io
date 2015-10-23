@@ -1,13 +1,13 @@
-@screen-xs:599px;
+@screen-xs: 767px;
 @yy-blue: #66b9d2;
-@yy-orange-pale:#dc9a6b;
-@yy-orange-heavy:#b36a42;
-@yy-gray-light:#eeeeee;
-@text-1x:1.2rem;
-@text-2x:1.4rem;
-@text-3x:1.6rem;
-@text-4x:1.8rem;
-@text-5x:2rem;
+@yy-orange-pale: #dc9a6b;
+@yy-orange-heavy: #b36a42;
+@yy-gray-light: #eeeeee;
+@text-1x: 1.2rem;
+@text-2x: 1.4rem;
+@text-3x: 1.6rem;
+@text-4x: 1.8rem;
+@text-5x: 2rem;
 
 .yy-blog-timeline {
   max-width: 100rem;
@@ -28,8 +28,8 @@
 .yy-blog-timeline-box.right {
   margin-left: 50%;
   padding: 3rem 2rem 3rem 0;
-  @media screen and (max-width: @screen-xs) {
-    margin-left: 3rem;
+  &.sm {
+    margin-left: 1.5rem;
   }
 }
 
@@ -73,20 +73,26 @@
   font-size: @text-1x;
 }
 
-.yy-blog-timeline-box .yy-blog-timeline-box-inner {
-  border-top: solid @yy-blue 2px;
-  @media screen and (max-width: 599px) {
+.yy-blog-timeline-box {
+  .yy-blog-timeline-box-inner {
+    border-top: solid @yy-blue 2px;
+  }
+  &.sm .yy-blog-timeline-box-inner {
     border-top: solid @yy-gray-light 1px;
   }
+
 }
 
 .yy-blog-timeline-box.left .yy-blog-timeline-box-inner {
   padding-right: 4rem;
 }
 
-.yy-blog-timeline-box.right .yy-blog-timeline-box-inner {
-  padding-left: 4rem;
-  @media screen and (max-width: @screen-xs) {
+.yy-blog-timeline-box.right {
+  .yy-blog-timeline-box-inner {
+    padding-left: 4rem;
+  }
+
+  &.sm .yy-blog-timeline-box-inner {
     padding-left: 1rem;
   }
 }
@@ -97,7 +103,7 @@
   font-size: 1.6rem;
   background: #fff;
   line-height: 1.6rem;
-  padding:0.2rem
+  padding: 0.2rem
 }
 
 .yy-blog-timeline-box.left .yy-blog-timeline-box-inner .yy-blog-timeline-node {
@@ -118,9 +124,11 @@
   margin: 0 auto;
 }
 
-.yy-blog-timeline-box.right .yy-blog-timeline-box-inner .yy-blog-timeline-image-container {
-  left: -90%;
-  @media screen and (max-width: @screen-xs) {
+.yy-blog-timeline-box.right {
+  .yy-blog-timeline-box-inner .yy-blog-timeline-image-container {
+    left: -90%;
+  }
+  &.sm .yy-blog-timeline-box-inner .yy-blog-timeline-image-container {
     position: relative;
     left: 0;
     margin-bottom: 2rem;
@@ -131,14 +139,18 @@
   right: -75%;
 }
 
-.yy-blog-timeline-box .yy-blog-timeline-box-inner .yy-blog-timeline-content {
-  overflow: hidden;
-  position: relative;
-  border-radius: 0.5rem;
-  padding: 2rem 2rem 1rem 2rem;
-  font-size: @text-3x;
-  @media screen and (max-width: @screen-xs) {
+.yy-blog-timeline-box {
+  .yy-blog-timeline-box-inner .yy-blog-timeline-content {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 2rem 2rem 1rem 2rem;
+    font-size: @text-3x;
+  }
+  &.sm .yy-blog-timeline-box-inner .yy-blog-timeline-content {
     margin-top: 2rem;
+    padding: 1rem;
+
   }
 }
 
