@@ -6,9 +6,9 @@
       <md-tab-body>
         <md-content layout-padding>
 
-          <p class="text-4x">InstantBlog creates an instant blog page for you by information from your
-            <a href="https://instagram.com">Instagram</a> account. All you need to do is to replace YourUserName with
-            your
+          <p class="text-4x">InstantBlog allows you to view your
+            <a href="https://instagram.com">Instagram</a> account in a one-page diary/blog format.
+            All you need to do is to replace YourUserName with your
             Instagram's username in this link: <span class="text-italic">http://instantblog.me/<span class="text-red">YourUserName</span></span>.
             For example:
           </p>
@@ -17,7 +17,7 @@
 
           <div class="text-center text-5x">
             http://instantblog.me/
-            <acme-malarkey extra-values="['mynameisyan', 'instagram', 'awesome_name']"></acme-malarkey>
+            <acme-malarkey extra-values="['mynameisyan', 'instagram', 'yourname']"></acme-malarkey>
           </div>
         </md-content>
 
@@ -52,7 +52,6 @@
           <p class="text-3x text-italic">You might want to know ...</p>
           <hr/>
           <p>- InstantBlog uses are for <strong>FREE</strong>.</p>
-
 
           <p>- Private users' accounts are NOT viewable on InstantBlog.</p>
 
@@ -126,7 +125,7 @@
               </md-input-container>
             </div>
 
-            <div layout layout-sm="column">
+            <div layout="row" layout-sm="column">
 
               <md-input-container flex="50" flex-sm="100">
                 <label>Your Name</label>
@@ -137,7 +136,7 @@
                 </div>
               </md-input-container>
               <md-input-container flex="50" flex-sm="100">
-                <label>Your Emai</label>
+                <label>Your Email</label>
                 <input type="email" name="email" ng-model="toast.email" ng-pattern="/^.+@.+\..+$/" minlength="0"
                        maxlength="100"/>
 

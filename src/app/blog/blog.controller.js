@@ -16,6 +16,7 @@
     vm.nextUrl = CurrentInstaUser.nextUrl || null;
     vm.FireBaseService = FireBaseService;
 
+    //FireBaseService.initializeStat();
 
 
     vm.loadMore = loadMore;

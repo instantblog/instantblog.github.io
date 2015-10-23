@@ -11,9 +11,9 @@
 
       <div layout-padding>
 
-        <p class="text-3x">InstantBlog creates an instant blog page for you by information from your
-          <a href="https://instagram.com">Instagram</a> account. All you need to do is to replace YourUserName with
-          your
+        <p class="text-3x">InstantBlog allows you to view your
+          <a href="https://instagram.com">Instagram</a> account in a one-page diary/blog format.
+          All you need to do is to replace YourUserName with your
           Instagram's username in this link: <span class="text-italic">http://instantblog.me/<span class="text-red">YourUserName</span></span>.
           For example:
         </p>
@@ -37,9 +37,9 @@
 
         <p>- Feel free to use InstantBlog's link as your personal blog page, and to share it with your friends.</p>
 
-        <p>- <span class="text-blue text-3x">{{blog.FireBaseService.totalPageViews}}</span> page views since
+        <p>- <span class="text-blue text-3x">{{footer.FireBaseService.totalPageViews}}</span> page views since
           InstantBlog is published on Oct 22, 2015, with
-          <span class="text-blue text-3x">{{blog.FireBaseService.totalUniqueUsers}}</span>
+          <span class="text-blue text-3x">{{footer.FireBaseService.totalUniqueUsers}}</span>
           unique Instagram usernames searched.</p>
       </div>
 
@@ -48,8 +48,10 @@
 
     <div ng-if="toast.infoType==='Contact'" class="ib-md-input">
       <p>If you have any questions/comments/suggestions, please feel free to send me an
-        <md-icon class="text-3x">email</md-icon>
-        , or leave me a message below.
+        <a href="mailto:ychen.0931@gmail.com">
+          <md-icon class="text-10x text-blue">email</md-icon>
+          <md-tooltip>ychen.0931@gmail.com</md-tooltip>
+        </a> , or leave me a message below.
       </p>
       <br/>
 

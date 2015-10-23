@@ -24,16 +24,15 @@
     return vm;
     //---------------------------------------
 
-
     //Initializing Stat
     function initializeStat() {
       ref.child("pagestat").set({
-        totalPageViews: 1,
+        totalPageViews: 0,
         users: [
           {
             username: $state.params.instauser,
             lastTimeStamp: Firebase.ServerValue.TIMESTAMP,
-            viewCounts: 1
+            viewCounts: 0
           }
         ]
       });
@@ -44,10 +43,9 @@
       ref.once('value', function (dataSnapshot) {
         var pagestat = dataSnapshot.val().pagestat;
 
-        if (username === 'mynameisyan' || username === 'about') {
+        if (username === 'mynameisyan' || username === 'about' || username==='') {
           vm.totalPageViews = pagestat.totalPageViews;
           vm.totalUniqueUsers = pagestat.users.length;
-          return;
 
         } else {
           var temp = {};
