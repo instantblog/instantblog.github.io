@@ -22,8 +22,13 @@
   max-height: none;
   font-family: 'Roboto', serif;
 }
-.ib-footer .ib-info-block .ib-toast-content {
+.ib-footer md-toast.md-bottom.ib-info-block .ib-toast-content {
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .ib-footer md-toast.md-bottom.ib-info-block {
+    padding: 1rem 2rem 2rem;
+  }
 }
 .ib-footer .ib-md-input label {
   color: #aaa;
@@ -44,5 +49,5 @@
 }
 .ib-footer .md-button {
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
 }

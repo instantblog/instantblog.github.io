@@ -1,4 +1,5 @@
 @yy-blue:#66b9d2;
+@screen-xs:767px;
 
 .ib-footer {
   height: 8rem;
@@ -22,11 +23,15 @@
     height: auto;
     max-height: none;
     font-family: 'Roboto', serif;
+    .ib-toast-content {
+      width: 100%;
+    }
+    @media screen and (max-width: @screen-xs){
+      padding: 1rem 2rem 2rem;
+    }
   }
 
-  .ib-info-block .ib-toast-content {
-    width: 100%;
-  }
+
 
   .ib-md-input {
     label {
@@ -52,6 +57,6 @@
   }
   .md-button {
     margin: 0;
-    font-size: 12px;
+    font-size: 10px;
   }
 }

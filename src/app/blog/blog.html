@@ -1,13 +1,19 @@
 <div class="blog-container">
 
-  <md-content class="blog-container">
+  <div class="ib-logo-wrapper hide-gt-sm">
+    <a href="#/about">
+      <div class="ib-logo">InstantBlog</div>
+    </a>
+  </div>
 
+  <md-content>
     <div class="blog-header text-center">
       <img class="full-width" ng-src="{{blog.currentUser.profile_picture}}" errsrc="assets/images/tree.jpg" alt=""/>
     </div>
 
     <p class="lead user-profile">
-      <img class="img-circle" ng-src="{{blog.currentUser.profile_picture}}" errsrc="assets/images/user_profile.png" alt=""><br>
+      <img class="img-circle" ng-src="{{blog.currentUser.profile_picture}}" errsrc="assets/images/user_profile.png"
+           alt=""><br>
     </p>
 
     <!------------------->
@@ -16,19 +22,19 @@
       <p class="text-5x">
         <a href="http://www.instagram.com/{{blog.currentUser.username}}">{{blog.currentUser.username}}</a>
       </p>
+      <p class="text-4x">{{blog.currentUser.full_name}} </p>
 
-      <p class="text-2x text-grey"  layout-padding ng-if="blog.currentUser.counts">
+      <p class="text-2x text-grey" layout-padding ng-if="blog.currentUser.counts">
         <strong>{{blog.currentUser.counts.media}}</strong> Posts &nbsp;| &nbsp;
-        <strong>{{blog.currentUser.counts.followed_by}}</strong> Followers  &nbsp;| &nbsp;
+        <strong>{{blog.currentUser.counts.followed_by}}</strong> Followers &nbsp;| &nbsp;
         <strong>{{blog.currentUser.counts.follows}}</strong> Followering
       </p>
 
 
-
       <p class="text-4x text-red ib-user-error" ng-if="blog.CurrentInstaUser.isPrivate">Private User Account.</p>
-      <p class="text-4x text-red ib-user-error" ng-if="blog.CurrentInstaUser.errorMessage">Sorry, {{blog.CurrentInstaUser.errorMessage}}.</p>
 
-
+      <p class="text-4x text-red ib-user-error" ng-if="blog.CurrentInstaUser.errorMessage">Sorry,
+        {{blog.CurrentInstaUser.errorMessage}}.</p>
 
 
       <p class="text-3x">{{blog.currentUser.bio}}</p>
@@ -52,7 +58,7 @@
       </div>
       <div class="row text-center blog-loadmore margin-0"
            ng-if="!blog.nextUrl && blog.currentMedia.length>=blog.currentUser.counts.media">
-       <p class="text-3x text-blue">E&nbsp;N&nbsp;D</p>
+        <p class="text-3x text-blue">E&nbsp;N&nbsp;D</p>
       </div>
     </div>
 

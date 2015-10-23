@@ -7,9 +7,7 @@ angular
 //InstagramApiServices.$inject = ['$http', '$templateCache'];
 function InstagramApiServices($http, $templateCache,$log) {
 
-  //var myUserId = 2180465817;
-  //var clientId = '2bebdf6a7b71473f86629687183d3a62';
-  var token = '2180465817.467ede5.b539e364139049fdb1e1637a81337a61';
+  var token = '2242645048.f70a9cb.4754007deba943ffb47a3a1f2a8b757b';
   var urlPrefix = 'https://api.instagram.com/v1/';
   var urlPostfix = '?access_token=' + token + '&count=500&callback=JSON_CALLBACK';
   var log = $log;
@@ -25,20 +23,6 @@ function InstagramApiServices($http, $templateCache,$log) {
     getUserFollows: getUserFollows,
     loadMore:loadMore
   });
-
-  //--------------------------------------------------------------------
-
-  //var url =   'https://api.instagram.com/v1/users/' + this.userId + '/media/recent?client_id=' + clientId + '&callback=JSON_CALLBACK';
-  //var url_user ='https://api.instagram.com/v1/users/' + userId + '?access_token=' + token + '&callback=JSON_CALLBACK';
-  //var url_recent = 'https://api.instagram.com/v1/users/' + userId + '/media/recent?access_token=' + token + '&count=1000&callback=JSON_CALLBACK';
-  //var url_feed = 'https://api.instagram.com/v1/users/self/feed?access_token=' + token + '&count=1000&callback=JSON_CALLBACK';
-  //var url_liked = 'https://api.instagram.com/v1/users/self/media/liked?access_token=' + token + '&count=1000&callback=JSON_CALLBACK';
-  //var url_follows = 'https://api.instagram.com/v1/users/' + userId + '/follows?access_token=' + token + '&callback=JSON_CALLBACK';
-  //var url_follow_by = 'https://api.instagram.com/v1/users/' + userId + '/followed-by?access_token=' + token + '&callback=JSON_CALLBACK';
-  //var url_media_detail = 'https://api.instagram.com/v1/media/' + mediaId + '?access_token=ACCESS-TOKEN=' + token + '&callback=JSON_CALLBACK';
-  //var url_media_comments = 'https://api.instagram.com/v1/media/' + mediaId + '/comments?access_token=' + token + '&callback=JSON_CALLBACK';
-  //var url_media_likes = 'https://api.instagram.com/v1/media/' + mediaId + '/likes?access_token=' + token + '&callback=JSON_CALLBACK';
-  //var url_popular = 'https://api.instagram.com/v1/media/popular?access_token=' + token + '&callback=JSON_CALLBACK';
 
   function getData(url) {
     return $http({

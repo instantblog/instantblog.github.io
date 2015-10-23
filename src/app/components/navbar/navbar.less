@@ -4,50 +4,69 @@
   padding: 0 5rem;
   z-index: 1;
   box-shadow: 0 1px 1px 0 #f0f0f0;
-  @media screen and (max-width: 767px) {
-    padding: 0 1rem;
+  @media screen and (max-width: 599px) {
+    padding: 0rem;
   }
-  .ib-logo-wrapper, .ib-search-wrapper {
+
+  .ib-logo-wrapper {
+    padding: 1rem 0 0.8rem 1rem;
+    .ib-logo {
+      display: inline-block;
+      font-size: 1.3rem;
+      border-radius: 0.5rem;
+      border: solid 1px #000;
+      padding: 0.5rem 1.5rem;
+      font-family: "Roboto Mono", Menlo, monospace;
+      cursor: pointer;
+      z-index: 2;
+      &:hover {
+        transform: scale(0.95);
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+  .ib-search-wrapper {
     padding: 1rem 0 0.8rem 0;
+    @media screen and (max-width: 599px) {
+      padding: 0rem;
+    }
   }
 
   &.on-blog {
-    @media screen and (max-width: 767px) {
-      .ib-logo {
-        font-size: 1.4rem;
-        position: absolute;
-        top: 4rem;
-        z-index: 2;
-      }
-
+    @media screen and (max-width: 599px) {
       .ib-search-wrapper {
         padding: 0;
         max-width: none;
       }
     }
   }
+  a {
+    text-decoration: none;
+    color: #000;
+    .ib-logo {
+      display: inline-block;
+      font-size: 1.3rem;
+      border-radius: 0.5rem;
+      border: solid 1px #000;
+      padding: 0.5rem 1.5rem;
+      font-family: "Roboto Mono", Menlo, monospace;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.95);
+      }
 
-  .ib-logo {
-    display: inline-block;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
-    border: solid 1px #000;
-    padding: 0.5rem 1.5rem;
-    font-family: "Roboto Mono", Menlo, monospace;
-    cursor: pointer;
-    &:hover {
-      transform: scale(0.95);
-    }
-
-    a {
-      text-decoration: none;
-      color: #000;
     }
   }
 
   .ib-nav-search {
-    max-width: 28rem;
+    max-width: 30rem;
     margin-left: auto;
+    @media screen and (max-width: 599px) {
+      max-width: 100%;
+    }
   }
 
   md-autocomplete {
@@ -67,13 +86,17 @@
       border-radius: 3px;
     }
     button {
-      width: 2rem;
+      width: 6rem;
       height: 2rem;
       md-icon {
         height: 2rem;
         width: 2rem;
       }
     }
+  }
+  .is-hidden {
+    visibility: hidden;
+    height: 0;
   }
 
 }

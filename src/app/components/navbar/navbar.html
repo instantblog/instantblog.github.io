@@ -1,11 +1,13 @@
 <div class="ib-nav">
-  <div layout="row" layoutalign="start center" ng-class="{'on-blog':vm.state.params.instauser!=='about'}">
-    <div flex="30" flex-sm="10" class="ib-logo-wrapper">
-
+  <div layout="row" layout-sm="column">
+    <div flex="30" flex-sm="100" class="ib-logo-wrapper hide-sm" ng-if="vm.state.params.instauser!=='about'">
       <div class="ib-logo"><a href="#/about">InstantBlog</a></div>
     </div>
+    <div flex="30" flex-sm="100" class="ib-logo-wrapper" ng-if="vm.state.params.instauser==='about'">
+      <a href="#/about"><div class="ib-logo">InstantBlog</div></a>
+    </div>
 
-    <div flex="70" flex-sm="90" class="text-right ib-search-wrapper">
+    <div flex="70" flex-sm="100" class="text-right ib-search-wrapper" ng-if="vm.state.params.instauser!=='about'">
       <div class="ib-nav-search">
         <div class="search-box">
           <form ng-submit="$event.preventDefault()">

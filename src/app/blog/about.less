@@ -1,3 +1,4 @@
+@screen-xs:767px;
 
 .ib-about-container.ib-info-block {
   font-size: 1.8rem;
@@ -23,6 +24,9 @@
   }
   md-tab-content {
     padding: 5rem 3rem;
+    @media screen and (max-width:@screen-xs) {
+      padding: 2rem 0;
+    }
   }
   #tab-content-2 {
     background: #efefef;

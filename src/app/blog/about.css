@@ -6,6 +6,11 @@
 .ib-about-container.ib-info-block md-tabs {
   padding: 5rem;
 }
+@media screen and (max-width: 767px) {
+  .ib-about-container.ib-info-block md-tabs {
+    padding: 1rem;
+  }
+}
 .ib-about-container.ib-info-block md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper {
   width: auto !important;
 }
@@ -21,6 +26,11 @@
 }
 .ib-about-container.ib-info-block md-tab-content {
   padding: 5rem 3rem;
+}
+@media screen and (max-width: 767px) {
+  .ib-about-container.ib-info-block md-tab-content {
+    padding: 2rem 0;
+  }
 }
 .ib-about-container.ib-info-block #tab-content-2 {
   background: #efefef;
