@@ -1,0 +1,39 @@
+<div class="ib-nav">
+  <div layout="row" layoutalign="start center" ng-class="{'on-blog':vm.state.params.instauser!=='about'}">
+    <div flex="30" flex-sm="10" class="ib-logo-wrapper">
+
+      <div class="ib-logo"><a href="#/about">InstantBlog</a></div>
+    </div>
+
+    <div flex="70" flex-sm="90" class="text-right ib-search-wrapper">
+      <div class="ib-nav-search">
+        <div class="search-box">
+          <form ng-submit="$event.preventDefault()">
+            <md-autocomplete
+              md-selected-item="vm.user"
+              md-search-text-change="vm.searchUser(vm.username)"
+              md-search-text="vm.username"
+              md-items="user in vm.searchUser(vm.username)"
+              md-item-text="user.username"
+              md-min-length="1"
+              placeholder="Search for an Instagram user"
+              md-menu-class="autocomplete-custom-template">
+              <md-item-template>
+                <div ng-click="vm.changeUser(user.username)">
+                  <img ng-src="{{user.profile_picture}}" alt="{{user.username}}"
+                       class="img-circle searched-user-thumb-sm"/>
+                  <span> {{user.username}} </span>
+                </div>
+              </md-item-template>
+            </md-autocomplete>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--<md-button class="acme-navbar-text">Application was created {{ vm.relativeDate }}.</md-button>-->
+

@@ -1,0 +1,48 @@
+.ib-footer {
+  height: 8rem;
+  background-color: #66b9d2;
+  padding: 2rem 3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #666;
+}
+.ib-footer a {
+  color: #666;
+  text-decoration: none;
+}
+.ib-footer md-toast.md-bottom.ib-info-block {
+  padding: 1rem 5rem 5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  max-height: none;
+  font-family: 'Roboto', serif;
+}
+.ib-footer .ib-info-block .ib-toast-content {
+  width: 100%;
+}
+.ib-footer .ib-md-input label {
+  color: #aaa;
+}
+.ib-footer .ib-md-input md-input-container .md-input {
+  color: white;
+  border-bottom-color: #aaa;
+}
+.ib-footer .ib-md-input md-input-container.md-input-focused .md-input {
+  color: white;
+  border-bottom-color: #888;
+}
+.ib-footer .ib-md-input md-input-container.md-input-focused label {
+  color: #888;
+}
+.ib-footer .ib-md-input md-input-container.md-input-has-value label {
+  color: #888;
+}
+.ib-footer .md-button {
+  margin: 0;
+  font-size: 12px;
+}

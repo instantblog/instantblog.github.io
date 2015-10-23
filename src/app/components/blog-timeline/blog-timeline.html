@@ -1,0 +1,76 @@
+<div class="yy-blog-timeline">
+  <div class="row margin-0 full-width hidden-xs" ng-repeat="gallery in galleries track by $index">
+    <div class="yy-blog-timeline-box" ng-class-odd="'right'" ng-class-even="'left'">
+      <div class="clearfix">
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy'}}</div>
+        <div class="yy-blog-timeline-index">#{{$index+1}}</div>
+      </div>
+      <div class="yy-blog-timeline-box-inner">
+        <div class="yy-blog-timeline-image-container">
+          <a href=""><img class="" ng-src="{{gallery.images.low_resolution.url}}" alt=""/></a>
+        </div>
+        <div class="yy-blog-timeline-node">
+          <i class="glyphicon glyphicon-time"></i>
+        </div>
+        <div class="yy-blog-timeline-content">
+          <div class="yy-blog-timeline-location">
+            <a href="https://instagram.com/explore/locations/{{gallery.location.id}}/">
+              {{gallery.location.name}}
+            </a>
+          </div>
+          <div class="clearfix text-1x">
+            <i class="glyphicon glyphicon-heart-empty text-red"></i> {{gallery.likes.count}}&nbsp;&nbsp;
+            <i class="glyphicon glyphicon-comment text-blue"></i> {{gallery.comments.count}}
+          </div>
+          <div class="gallery-image-caption">{{gallery.caption.text}}</div>
+
+          <div ng-repeat="comment in gallery.comments.data track by $index" ng-if="!!gallery.comments.data">
+            <div class="gallery-image-comment">
+              <a href="https://instagram.com/{{comment.from.username}}">
+                <img src="{{comment.from.profile_picture}}" class="img-circle"/>
+                <strong>{{comment.from.username}}</strong>
+              </a>
+              &nbsp;&nbsp;&nbsp;{{comment.text}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row margin-0 full-width visible-xs" ng-repeat="gallery in galleries track by $index">
+    <div class="yy-blog-timeline-box right">
+      <div class="clearfix">
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy'}}</div>
+        <div class="yy-blog-timeline-index">#{{$index+1}}</div>
+      </div>
+      <div class="yy-blog-timeline-box-inner">
+        <div class="yy-blog-timeline-node">
+          o
+        </div>
+        <div class="yy-blog-timeline-content">
+          <div class="yy-blog-timeline-location ">
+            <a href="https://instagram.com/explore/locations/{{gallery.location.id}}/">
+              {{gallery.location.name}}
+            </a>
+          </div>
+          <div class="yy-blog-timeline-image-container">
+            <a href=""><img class="full-width" ng-src="{{gallery.images.standard_resolution.url}}" alt=""/></a>
+          </div>
+
+          <div class="gallery-image-caption">{{gallery.caption.text}}</div>
+
+          <div ng-repeat="comment in gallery.comments.data track by $index"  ng-if="!!gallery.comments.data">
+            <div class="gallery-image-comment">
+              <a href="https://instagram.com/{{comment.from.username}}">
+                <img src="{{comment.from.profile_picture}}" class="img-circle"/>
+                <strong>{{comment.from.username}}</strong></a>
+              &nbsp;&nbsp;&nbsp;{{comment.text}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

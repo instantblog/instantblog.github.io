@@ -1,0 +1,66 @@
+<div class="blog-container">
+
+  <md-content class="blog-container">
+
+    <div class="blog-header text-center">
+      <img class="full-width" ng-src="{{blog.currentUser.profile_picture}}" errsrc="assets/images/tree.jpg" alt=""/>
+    </div>
+
+    <p class="lead user-profile">
+      <img class="img-circle" ng-src="{{blog.currentUser.profile_picture}}" errsrc="assets/images/user_profile.png" alt=""><br>
+    </p>
+
+    <!------------------->
+
+    <div class="text-center user-info">
+      <p class="text-5x">
+        <a href="http://www.instagram.com/{{blog.currentUser.username}}">{{blog.currentUser.username}}</a>
+      </p>
+
+      <p class="text-2x text-grey"  layout-padding ng-if="blog.currentUser.counts">
+        <strong>{{blog.currentUser.counts.media}}</strong> Posts &nbsp;| &nbsp;
+        <strong>{{blog.currentUser.counts.followed_by}}</strong> Followers  &nbsp;| &nbsp;
+        <strong>{{blog.currentUser.counts.follows}}</strong> Followering
+      </p>
+
+
+
+      <p class="text-4x text-red ib-user-error" ng-if="blog.CurrentInstaUser.isPrivate">Private User Account.</p>
+      <p class="text-4x text-red ib-user-error" ng-if="blog.CurrentInstaUser.errorMessage">Sorry, {{blog.CurrentInstaUser.errorMessage}}.</p>
+
+
+
+
+      <p class="text-3x">{{blog.currentUser.bio}}</p>
+
+      <p class="text-2x"><a href="{{blog.currentUser.website}}">{{blog.currentUser.website}}</a></p>
+    </div>
+
+    <div class="blog-content">
+      <div ng-if="blog.timelineView" class="timeline-view">
+        <div data-blog-timeline data-galleries="blog.currentMedia"></div>
+      </div>
+      <!--<div ng-if="!blog.timelineView">-->
+      <!--<div blog-block></div>-->
+      <!--</div>-->
+
+      <div class="row text-center blog-loadmore margin-0"
+           ng-if="blog.nextUrl && blog.currentMedia.length<blog.currentUser.counts.media">
+        <md-button class="md-flat yy-md-blue yy-btn-lg" ng-click="blog.loadMore()">
+          Load More &nbsp; &nbsp;<i class="glyphicon glyphicon-chevron-down text-1x"></i>
+        </md-button>
+      </div>
+      <div class="row text-center blog-loadmore margin-0"
+           ng-if="!blog.nextUrl && blog.currentMedia.length>=blog.currentUser.counts.media">
+       <p class="text-3x text-blue">E&nbsp;N&nbsp;D</p>
+      </div>
+    </div>
+
+    <!------------>
+
+  </md-content>
+
+  <footer></footer>
+
+</div>
+

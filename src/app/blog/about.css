@@ -1,0 +1,69 @@
+.ib-about-container.ib-info-block {
+  font-size: 1.8rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.ib-about-container.ib-info-block md-tabs {
+  padding: 5rem;
+}
+.ib-about-container.ib-info-block md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper {
+  width: auto !important;
+}
+.ib-about-container.ib-info-block md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item {
+  color: #44868f;
+  font-size: 2rem;
+}
+.ib-about-container.ib-info-block md-toolbar.md-warn > md-tabs.md-default-theme,
+.ib-about-container.ib-info-block md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active,
+.ib-about-container.ib-info-block md-toolbar.md-warn > md-tabs.md-default-theme,
+.ib-about-container.ib-info-block md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+  color: #66b9d2;
+}
+.ib-about-container.ib-info-block md-tab-content {
+  padding: 5rem 3rem;
+}
+.ib-about-container.ib-info-block #tab-content-2 {
+  background: #efefef;
+}
+.ib-about-container.ib-info-block .ib-toast-content {
+  width: 100%;
+}
+.ib-about-container.ib-info-block .layout-padding {
+  padding: 1.5rem;
+}
+.ib-about-container.ib-info-block .ib-md-input label {
+  color: #888;
+}
+.ib-about-container.ib-info-block .ib-md-input md-input-container.md-input-has-value label {
+  color: #aaa;
+}
+.ib-about-container.ib-info-block .ib-md-input md-input-container.md-input-focused label {
+  color: #aaa;
+}
+.ib-about-container.ib-info-block .ib-md-input md-input-container.md-input-focused .md-input {
+  color: #000;
+  border-bottom-color: #aaa;
+}
+.ib-about-container.ib-info-block .ib-md-input md-input-container .md-input {
+  color: #000;
+  border-bottom-color: #888;
+}
+.ib-about-container.ib-info-block blockquote {
+  color: #888;
+}
+.ib-about-container.ib-info-block .ib-search-wrapper {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+.ib-about-container.ib-info-block .ib-preview {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.md-virtual-repeat-container.md-autocomplete-suggestions-container {
+  height: 35rem;
+  max-height: 35rem!important;
+}
+.md-autocomplete-suggestions li .searched-user-thumb-sm {
+  width: 3rem;
+  margin-right: 1rem;
+}
