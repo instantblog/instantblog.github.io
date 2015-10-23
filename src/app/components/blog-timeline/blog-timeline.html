@@ -1,8 +1,8 @@
 <div class="yy-blog-timeline">
-  <div class="row margin-0 full-width hidden-xs" ng-repeat="gallery in galleries track by $index">
+  <div ng-if="!isSmallScreen" class="row margin-0 full-width" ng-repeat="gallery in galleries track by $index">
     <div class="yy-blog-timeline-box" ng-class-odd="'right'" ng-class-even="'left'">
       <div class="clearfix">
-        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy'}}</div>
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'EEE, MMM dd, yyyy, HH:mma'}}</div>
         <div class="yy-blog-timeline-index">#{{$index+1}}</div>
       </div>
       <div class="yy-blog-timeline-box-inner">
@@ -39,15 +39,15 @@
   </div>
 
 
-  <div class="row margin-0 full-width visible-xs" ng-repeat="gallery in galleries track by $index">
+  <div ng-if=" isSmallScreen" class="row margin-0 full-width" ng-repeat="gallery in galleries track by $index">
     <div class="yy-blog-timeline-box right">
       <div class="clearfix">
-        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'MMM dd, yyyy'}}</div>
+        <div class="yy-blog-timeline-date">{{gallery.created_time*1000| date:'EEE, MMM dd, yyyy, HH:mma'}}</div>
         <div class="yy-blog-timeline-index">#{{$index+1}}</div>
       </div>
       <div class="yy-blog-timeline-box-inner">
         <div class="yy-blog-timeline-node">
-          o
+          <i class="glyphicon glyphicon-time"></i>
         </div>
         <div class="yy-blog-timeline-content">
           <div class="yy-blog-timeline-location ">

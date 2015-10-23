@@ -48,14 +48,17 @@
 
     <div ng-if="toast.infoType==='Contact'" class="ib-md-input">
       <p>If you have any questions/comments/suggestions, please feel free to send me an
-        <md-icon class="text-3x">email</md-icon>, or leave me a message below.</p>
+        <md-icon class="text-3x">email</md-icon>
+        , or leave me a message below.
+      </p>
       <br/>
 
       <form name="commentForm">
         <div>
           <md-input-container>
             <label>Your Comment</label>
-            <textarea required name="message" rows="3" ng-model="toast.message" minlength="1" maxlength="1000"></textarea>
+            <textarea required name="message" rows="3" ng-model="toast.message" minlength="1"
+                      maxlength="1000"></textarea>
 
             <div ng-messages="commentForm.message.$error">
               <div ng-message="required">This is required.</div>
@@ -68,13 +71,15 @@
           <md-input-container style="width:50%">
             <label>Your Name</label>
             <input required name="name" type="text" ng-model="toast.name" minlength="1" maxlength="100"/>
+
             <div ng-messages="commentForm.name.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container style="width:50%">
             <label>Your Email (optional)</label>
-            <input type="email" name="email" ng-model="toast.email" ng-pattern="/^.+@.+\..+$/" minlength="0" maxlength="100"/>
+            <input type="email" name="email" ng-model="toast.email" ng-pattern="/^.+@.+\..+$/" minlength="0"
+                   maxlength="100"/>
 
             <div ng-messages="commentForm.email.$error" role="alert">
               <div ng-message-exp="['minlength', 'maxlength', 'pattern']">
@@ -86,9 +91,11 @@
         </div>
 
         <md-button class="md-raised" ng-click="toast.FireBaseService.addToComments(toast)"> Submit Comments</md-button>
-
-        <p class="text-red" ng-if="toast.FireBaseService.isCommentUpdated">Thank you! Your message has been
-          received.</p>
+        <div class="text-center">
+          <small class="text-red" ng-if="toast.FireBaseService.isCommentUpdated">Thank you! Your message has been
+            received.
+          </small>
+        </div>
       </form>
     </div>
   </div>

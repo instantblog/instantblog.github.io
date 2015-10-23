@@ -1,4 +1,27 @@
 <div class="blog-container">
+  <div class="text-right ib-search-wrapper hide-gt-sm">
+    <div class="search-box">
+      <form ng-submit="$event.preventDefault()">
+        <md-autocomplete
+          md-selected-item="vm.user"
+          md-search-text-change="vm.searchUser(vm.username)"
+          md-search-text="vm.username"
+          md-items="user in vm.searchUser(vm.username)"
+          md-item-text="user.username"
+          md-min-length="1"
+          placeholder="Search for an Instagram user"
+          md-menu-class="autocomplete-custom-template">
+          <md-item-template>
+            <div ng-click="vm.changeUser(user.username)">
+              <img ng-src="{{user.profile_picture}}" alt="{{user.username}}"
+                   class="img-circle searched-user-thumb-sm"/>
+              <span> {{user.username}} </span>
+            </div>
+          </md-item-template>
+        </md-autocomplete>
+      </form>
+    </div>
+  </div>
 
   <div class="ib-logo-wrapper hide-gt-sm">
     <a href="#/about">
@@ -22,6 +45,7 @@
       <p class="text-5x">
         <a href="http://www.instagram.com/{{blog.currentUser.username}}">{{blog.currentUser.username}}</a>
       </p>
+
       <p class="text-4x">{{blog.currentUser.full_name}} </p>
 
       <p class="text-2x text-grey" layout-padding ng-if="blog.currentUser.counts">
