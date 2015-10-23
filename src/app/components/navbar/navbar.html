@@ -1,15 +1,12 @@
 <div class="ib-nav">
-  <div layout="row" layout-sm="column">
-    <div flex="30" flex-sm="100" class="ib-logo-wrapper hide-sm" ng-if="vm.state.params.instauser!=='about'">
+    <div class="ib-logo-wrapper hide-sm" ng-if="vm.state.params.instauser!=='about'">
       <div class="ib-logo"><a href="/about">InstantBlog</a></div>
     </div>
-    <div flex="30" flex-sm="100" class="ib-logo-wrapper" ng-if="vm.state.params.instauser==='about'">
+    <div class="ib-logo-wrapper" ng-if="vm.state.params.instauser==='about'">
       <a href="/about"><div class="ib-logo">InstantBlog</div></a>
     </div>
 
     <!--<div flex="70" flex-sm="100" class="text-right ib-search-wrapper">-->
-
-  </div>
 </div>
 
 <!--<md-button class="acme-navbar-text">Application was created {{ vm.relativeDate }}.</md-button>-->

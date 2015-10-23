@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('instantblog')
-  .directive('blogTimeline', function ($window,$log) {
+  .directive('blogTimeline', function ($window) {
     return {
       templateUrl: 'app/components/blog-timeline/blog-timeline.html',
       scope: {
