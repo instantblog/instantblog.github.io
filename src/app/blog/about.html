@@ -8,13 +8,13 @@
 
           <p class="text-4x">InstantBlog allows you to view your
             <a href="https://instagram.com">Instagram</a> account in a one-page diary/blog format.
-            All you need to do is to replace YourUserName with your
+            All you need to do is to replace <span class="text-italic text-red">YourUserName</span> with your
             Instagram's username in this link: <span class="text-italic">http://instantblog.me/<span class="text-red">YourUserName</span></span>.
             For example:
           </p>
         </md-content>
-        <md-content layout-padding>
 
+        <md-content layout-padding class="malarkey-class">
           <div class="text-center text-5x">
             http://instantblog.me/<acme-malarkey extra-values="['mynameisyan', 'instagram', 'yourname']"></acme-malarkey>
           </div>
@@ -43,7 +43,11 @@
             </form>
           </div>
         </div>
-        <md-content layout-padding class="ib-preview">
+
+
+        <md-content layout-padding class="ib-preview text-center text-3x">
+          <p> This is how mine looks like: </p>
+          <p><a href="/mynameisyan">http://instantblog.me/<span class="text-red">mynameisyan</span></a></p>
           <img class="full-width" src="assets/images/preview.jpg" alt=""/>
         </md-content>
 
@@ -82,7 +86,7 @@
 
             <p>&nbsp;</p>
 
-            <p>--<i> Yan Chen</i></p>
+            <p>--<i><a href="/mynameisyan">Yan Chen</a> </i></p>
 
           </blockquote>
 
@@ -126,7 +130,7 @@
 
             <div layout layout-sm="column">
 
-              <md-input-container style="width:50%">
+              <md-input-container style="width:80%">
                 <label>Your Name</label>
                 <input required name="name" type="text" ng-model="toast.name" minlength="1" maxlength="100"/>
 
@@ -134,7 +138,7 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
-              <md-input-container style="width:50%">
+              <md-input-container style="width:80%">
                 <label>Your Email</label>
                 <input type="email" name="email" ng-model="toast.email" ng-pattern="/^.+@.+\..+$/" minlength="0"
                        maxlength="100"/>
