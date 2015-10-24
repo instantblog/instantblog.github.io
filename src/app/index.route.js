@@ -17,7 +17,7 @@
     //  });
     //
     //$urlRouterProvider.otherwise('/about');
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(true);
   }
 
 })();
