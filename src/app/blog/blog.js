@@ -77,7 +77,7 @@
         }
       });
 
-    $urlRouterProvider.otherwise('/about');
+    $urlRouterProvider.otherwise('/');
   }
 
 })();

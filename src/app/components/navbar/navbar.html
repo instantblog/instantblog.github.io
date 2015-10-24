@@ -1,8 +1,9 @@
-<div class="ib-nav">
-    <div class="ib-logo-wrapper hide-sm" ng-if="vm.state.params.instauser!=='about'||vm.state.params.instauser===''">
+<div class="ib-nav"  ng-if="vm.state.params.instauser==='about'||vm.state.params.instauser===''">
+
+    <div class="ib-logo-wrapper hide-sm">
       <div class="ib-logo"><a href="/about">InstantBlog</a></div>
     </div>
-    <div class="ib-logo-wrapper" ng-if="vm.state.params.instauser==='about'||vm.state.params.instauser===''">
+    <div class="ib-logo-wrapper" hide-gt-sm>
       <a href="/about"><div class="ib-logo">InstantBlog</div></a>
     </div>
 </div>

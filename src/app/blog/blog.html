@@ -1,29 +1,37 @@
 <div class="blog-container">
-  <div class="text-right ib-search-wrapper hide-gt-sm">
-    <div class="search-box">
-      <form ng-submit="$event.preventDefault()">
-        <md-autocomplete
-          md-selected-item="blog.user"
-          md-search-text-change="blog.searchUser(blog.username)"
-          md-search-text="blog.username"
-          md-items="user in blog.searchUser(blog.username)"
-          md-item-text="user.username"
-          md-min-length="1"
-          placeholder="Search for an Instagram user"
-          md-menu-class="autocomplete-custom-template">
-          <md-item-template>
-            <div ng-click="blog.changeUser(user.username)">
-              <img ng-src="{{user.profile_picture}}" alt="{{user.username}}"
-                   class="img-circle searched-user-thumb-sm"/>
-              <span> {{user.username}} </span>
-            </div>
-          </md-item-template>
-        </md-autocomplete>
-      </form>
+
+  <div layout="row" layout-sm="column">
+      <div class="ib-logo-wrapper hide-sm" flex="30" flex-sm="1">
+        <a href="/about">
+          <div class="ib-logo">InstantBlog</div>
+        </a>
+      </div>
+
+    <div class="text-right ib-search-wrapper" flex="70" flex-sm="99">
+      <div class="search-box">
+        <form ng-submit="$event.preventDefault()">
+          <md-autocomplete
+            md-selected-item="blog.user"
+            md-search-text-change="blog.searchUser(blog.username)"
+            md-search-text="blog.username"
+            md-items="user in blog.searchUser(blog.username)"
+            md-item-text="user.username"
+            md-min-length="1"
+            placeholder="Search for an Instagram user"
+            md-menu-class="autocomplete-custom-template">
+            <md-item-template>
+              <div ng-click="blog.changeUser(user.username)">
+                <img ng-src="{{user.profile_picture}}" alt="{{user.username}}"
+                     class="img-circle searched-user-thumb-sm"/>
+                <span> {{user.username}} </span>
+              </div>
+            </md-item-template>
+          </md-autocomplete>
+        </form>
+      </div>
     </div>
   </div>
-
-  <div class="ib-logo-wrapper hide-gt-sm">
+  <div class="ib-logo-wrapper sm hide-gt-sm">
     <a href="/about">
       <div class="ib-logo">InstantBlog</div>
     </a>
