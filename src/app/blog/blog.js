@@ -78,19 +78,6 @@
       });
 
     $urlRouterProvider.otherwise('/');
-
-    $urlRouterProvider
-      .rule(function ($injector, $location) {
-        // This rule forces all URLs to have a trailing '/'
-        var path = $location.url();
-
-        if (path[path.length - 1] === '/' || path.indexOf('/?') > -1)
-          return;
-        if (path.indexOf('?') > -1)
-          return path.replace('?', '/?');
-
-        return path + '/';
-      })
   }
 
 })();
