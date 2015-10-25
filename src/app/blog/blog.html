@@ -6,20 +6,20 @@
     <md-fab-speed-dial md-open="blog.isFabOpen" md-direction="left" ng-class="">
       <md-fab-trigger>
         <md-button aria-label="menu" class="md-fab md-mini">
-          <i class="fa fa-bars"></i>
+          <i class="glyphicon glyphicon-menu-hamburger"></i>
         </md-button>
       </md-fab-trigger>
       <md-fab-actions>
         <md-button aria-label="timeline" class="md-fab md-raised md-mini" ng-class="{'active':blog.timelineView}"
                    ng-click="blog.timelineView=true">
-          <i class="fa fa-calendar"></i>
+          <i class="glyphicon glyphicon-calendar"></i>
         </md-button>
         <md-button aria-label="list" class="md-fab md-raised md-mini" ng-class="{'active':!blog.timelineView}"
                    ng-click="blog.timelineView=false">
-          <i class="fa fa-list-ul"></i>
+          <i class="glyphicon glyphicon-list"></i>
         </md-button>
         <md-button aria-label="top" class="md-fab md-raised md-mini" ng-click="blog.goToTop()">
-          <i class="fa fa-arrow-up"></i>
+          <i class="glyphicon glyphicon-arrow-up"></i>
         </md-button>
       </md-fab-actions>
     </md-fab-speed-dial>
