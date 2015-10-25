@@ -42,30 +42,24 @@
       vm.isStatUpdated = false;
       ref.once('value', function (dataSnapshot) {
         var pagestat = dataSnapshot.val().pagestat;
+        var temp = {};
 
-        if (username === 'mynameisyan' || username === 'about' || username==='') {
-          vm.totalPageViews = pagestat.totalPageViews;
-          vm.totalUniqueUsers = pagestat.users.length;
+        temp.totalPageViews = pagestat.totalPageViews + 1;
+        temp.users = pagestat.users;
 
-        } else {
-          var temp = {};
-          temp.totalPageViews = pagestat.totalPageViews + 1;
-          temp.users = pagestat.users;
+        addToUsersIfNotExist(temp.users, username).then(function (data) {
+          if (!data.isInArray) {
+            temp.users.push({
+              username: $state.params.instauser,
+              lastTimeStamp: Firebase.ServerValue.TIMESTAMP,
+              viewCounts: 1
+            });
+          }
+          ref.child("pagestat").set(temp, onStatComplete);
+        });
+        vm.totalPageViews = temp.totalPageViews;
+        vm.totalUniqueUsers = temp.users.length;
 
-          addToUsersIfNotExist(temp.users, username).then(function (data) {
-            if (!data.isInArray) {
-              temp.users.push({
-                username: $state.params.instauser,
-                lastTimeStamp: Firebase.ServerValue.TIMESTAMP,
-                viewCounts: 1
-              });
-            }
-            ref.child("pagestat").set(temp, onStatComplete);
-            vm.totalPageViews = temp.totalPageViews;
-            vm.totalUniqueUsers = temp.users.length;
-          });
-
-        }
       })
     }
 

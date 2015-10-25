@@ -1,15 +1,30 @@
 'use strict';
 
 angular.module('instantblog')
-  .directive('blogTimeline', function ($window) {
+  .directive('blogTimeline', function ($window,InstagramApiServices) {
     return {
       templateUrl: 'app/components/blog-timeline/blog-timeline.html',
-      scope: {
-        'galleries': '=galleries'
-      },
       restrict: 'EA',
-      link:function(scope){
-        scope.isSmallScreen =setSize();
+      link: function (scope) {
+        scope.isSmallScreen = setSize();
+        scope.isMoreCommentVisible = false;
+        scope.getRecentComments = getRecentComments;
+        scope.isVisible = isVisible;
+
+        function getRecentComments(mediaId) {
+          if (scope.isMoreCommentVisible) {
+            scope.isMoreCommentVisible = false;
+          } else {
+            InstagramApiServices.getRecentComments(mediaId).then(function (response) {
+              scope.gallery.recentComments = response.data.slice(0, response.data.length - 8);
+              isVisible()
+            })
+          }
+        }
+
+        function isVisible() {
+          scope.isMoreCommentVisible = !scope.isMoreCommentVisible;
+        }
 
         function setSize() {
           if ($window.innerWidth < 767) {
@@ -20,7 +35,7 @@ angular.module('instantblog')
         }
 
         angular.element($window).bind("resize", function () {
-          scope.$apply(scope.isSmallScreen =setSize());
+          scope.$apply(scope.isSmallScreen = setSize());
         });
       }
     };

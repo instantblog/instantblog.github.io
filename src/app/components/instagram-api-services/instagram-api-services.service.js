@@ -5,7 +5,7 @@ angular
   .service('InstagramApiServices', InstagramApiServices);
 
 //InstagramApiServices.$inject = ['$http', '$templateCache'];
-function InstagramApiServices($http, $templateCache,$log) {
+function InstagramApiServices($http, $templateCache, $log) {
 
   var token = '2242645048.f70a9cb.4754007deba943ffb47a3a1f2a8b757b';
   var urlPrefix = 'https://api.instagram.com/v1/';
@@ -21,7 +21,8 @@ function InstagramApiServices($http, $templateCache,$log) {
     getUserFeed: getUserFeed,
     getUserLiked: getUserLiked,
     getUserFollows: getUserFollows,
-    loadMore:loadMore
+    getRecentComments: getRecentComments,
+    loadMore: loadMore
   });
 
   function getData(url) {
@@ -42,8 +43,9 @@ function InstagramApiServices($http, $templateCache,$log) {
     var url = urlPrefix + 'users/self/media/recent' + urlPostfix;
     return getData(url);
   }
+
   function getMyMedia20() {
-    var url = urlPrefix + 'users/self/media/recent?access_token='+token+'&min_id=1&callback=JSON_CALLBACK';
+    var url = urlPrefix + 'users/self/media/recent?access_token=' + token + '&min_id=1&callback=JSON_CALLBACK';
     return getData(url);
   }
 
@@ -58,7 +60,7 @@ function InstagramApiServices($http, $templateCache,$log) {
   }
 
   function getUserRecentMedia(userId) {
-    var url = urlPrefix + 'users/' + userId + '/media/recent?access_token='+token+'&min_id=1&callback=JSON_CALLBACK';
+    var url = urlPrefix + 'users/' + userId + '/media/recent?access_token=' + token + '&min_id=1&callback=JSON_CALLBACK';
     return getData(url);
   }
 
@@ -77,7 +79,12 @@ function InstagramApiServices($http, $templateCache,$log) {
     return getData(url);
   }
 
-  function loadMore(url){
+  function loadMore(url) {
     return getData(url + '&callback=JSON_CALLBACK');
+  }
+
+  function getRecentComments(mediaId) {
+    var url = urlPrefix + 'media/' + mediaId + '/comments?access_token=' + token + '&callback=JSON_CALLBACK';
+    return getData(url);
   }
 }
