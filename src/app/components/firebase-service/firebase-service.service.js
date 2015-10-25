@@ -118,19 +118,19 @@
 
     function onStatComplete(error) {
       if (error) {
-        log.log('Stat synchronization failed');
+        //log.log('Stat synchronization failed');
       } else {
         vm.isStatUpdated = true;
-        log.log('Stat Info Received');
+        //log.log('Stat Info Received');
       }
     }
 
     function onCommentComplete(error) {
       if (error) {
-        log.log('Comment synchronization failed');
+        //log.log('Comment synchronization failed');
       } else {
         vm.isCommentUpdated = true;
-        log.log('Comment Received');
+        //log.log('Comment Received');
       }
     }
 

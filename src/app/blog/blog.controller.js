@@ -15,7 +15,7 @@
     vm.currentMedia = CurrentInstaUser.currentMedia || {};
     vm.nextUrl = CurrentInstaUser.nextUrl || null;
     vm.FireBaseService = FireBaseService;
-    vm.goToTop = goToTop;
+    vm.scrollTo = scrollTo;
 
     //FireBaseService.initializeStat();
 
@@ -25,8 +25,8 @@
     vm.changeUser = changeUser;
     //--------------------
 
-    function goToTop() {
-      $location.hash('top');
+    function scrollTo(id) {
+      $location.hash(id);
       $anchorScroll();
     }
 

@@ -1,5 +1,5 @@
 <div class="blog-container">
-  <a id="top"></a>
+  <div id="top"></div>
 
   <!--floating menu-->
   <div class="ib-float-fab">
@@ -16,9 +16,9 @@
         </md-button>
         <md-button aria-label="list" class="md-fab md-raised md-mini" ng-class="{'active':!blog.timelineView}"
                    ng-click="blog.timelineView=false">
-          <i class="glyphicon glyphicon-list"></i>
+          <i class="glyphicon glyphicon-th-list"></i>
         </md-button>
-        <md-button aria-label="top" class="md-fab md-raised md-mini" ng-click="blog.goToTop()">
+        <md-button aria-label="top" class="md-fab md-raised md-mini" ng-click="blog.scrollTo('top')">
           <i class="glyphicon glyphicon-arrow-up"></i>
         </md-button>
       </md-fab-actions>
@@ -65,9 +65,7 @@
   </div>
 
   <div class="ib-logo-wrapper sm hide-gt-sm">
-    <a href="/about">
       <div class="ib-logo">InstantBlog</div>
-    </a>
   </div>
 
   <md-content>
