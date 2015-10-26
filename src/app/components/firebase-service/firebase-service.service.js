@@ -98,17 +98,15 @@
     //Initializing Comments
     function initializeComments() {
       ref.child("comments").set({
-        totalComments: 0,
         comments: []
       });
     }
 
     function addToComments(obj) {
-      vm.isCommentUpdated = false;
       commentsRef.push(
         {
           name: obj.name,
-          email: obj.email,
+          email: obj.email || '',
           content: obj.message,
           timeStamp: Firebase.ServerValue.TIMESTAMP
         },
@@ -130,6 +128,10 @@
         //log.log('Comment synchronization failed');
       } else {
         vm.isCommentUpdated = true;
+
+        $timeout(function () {
+          vm.isCommentUpdated = false;
+        }, 2000);
         //log.log('Comment Received');
       }
     }

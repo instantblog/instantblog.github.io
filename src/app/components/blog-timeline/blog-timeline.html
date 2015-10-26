@@ -5,9 +5,13 @@
     <div class="yy-blog-timeline-index">#{{$index+1}}</div>
   </div>
   <div class="yy-blog-timeline-box-inner">
-    <div class="yy-blog-timeline-image-container hide-sm">
-      <a href=""><img class="" ng-src="{{gallery.images.low_resolution.url}}" alt=""/></a>
-    </div>
+    <div class="yy-blog-timeline-image-container"  ng-if="!isSmallScreen">
+      <img ng-if="!gallery.videos" class="full-width" ng-src="{{gallery.images.low_resolution.url}}"  ng-srcset="{{gallery.images.low_resolution.url}} 320w, {{gallery.images.standard_resolution.url}} 640w"  alt=""/>
+      <a href="{{gallery.videos.standard_resolution.url}}" >
+        <video ng-if="!!gallery.videos"  autoplay loop muted class="full-width"  alt="">
+          <source ng-src="{{gallery.videos.low_bandwidth.url}}"  ng-srcset="{{gallery.videos.standard_resolution.url}} 2x" type="video/mp4">
+        </video>
+      </a>    </div>
     <div class="yy-blog-timeline-node">
       <i class="glyphicon glyphicon-time"></i>
     </div>
@@ -17,8 +21,13 @@
           {{gallery.location.name}}
         </a>
       </div>
-      <div class="yy-blog-timeline-image-container hide-gt-sm">
-        <a href=""><img class="full-width" ng-src="{{gallery.images.low_resolution.url}}" alt=""/></a>
+      <div class="yy-blog-timeline-image-container" ng-if="isSmallScreen">
+        <img ng-if="!gallery.videos" class="full-width" ng-src="{{gallery.images.low_resolution.url}}"  ng-srcset="{{gallery.images.low_resolution.url}} 320w, {{gallery.images.standard_resolution.url}} 640w"  alt=""/>
+        <a href="{{gallery.videos.standard_resolution.url}}" >
+          <video ng-if="!!gallery.videos"  autoplay loop muted class="full-width"  alt="">
+            <source ng-src="{{gallery.videos.low_bandwidth.url}}"  ng-srcset="{{gallery.videos.standard_resolution.url}} 2x"  type="video/mp4">
+          </video>
+        </a>
       </div>
 
       <div class="clearfix text-1x">

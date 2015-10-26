@@ -119,7 +119,7 @@
             <div>
               <md-input-container>
                 <label>Your Comment</label>
-                <textarea required name="message" rows="3" ng-model="toast.message" minlength="1"
+                <textarea required name="message" rows="3" ng-model="blog.comment.message" minlength="1"
                           maxlength="1000"></textarea>
 
                 <div ng-messages="commentForm.message.$error">
@@ -132,7 +132,7 @@
 
               <md-input-container style="width:80%">
                 <label>Your Name</label>
-                <input required name="name" type="text" ng-model="toast.name" minlength="1" maxlength="100"/>
+                <input required name="name" type="text" ng-model="blog.comment.name" minlength="1" maxlength="100"/>
 
                 <div ng-messages="commentForm.name.$error">
                   <div ng-message="required">This is required.</div>
@@ -140,7 +140,7 @@
               </md-input-container>
               <md-input-container style="width:80%">
                 <label>Your Email</label>
-                <input type="email" name="email" ng-model="toast.email" ng-pattern="/^.+@.+\..+$/" minlength="0"
+                <input type="email" name="email" ng-model="blog.comment.email" ng-pattern="/^.+@.+\..+$/" minlength="0"
                        maxlength="100"/>
 
                 <div ng-messages="commentForm.email.$error" role="alert">
@@ -152,11 +152,11 @@
 
             </div>
             <br/>
-            <md-button class="md-raised" ng-click="toast.FireBaseService.addToComments(toast)"> Submit
+            <md-button class="md-raised" ng-click="blog.FireBaseService.addToComments(blog.comment);blog.resetComment()"> Submit
               Comments
             </md-button>
 
-            <p class="text-red" ng-if="toast.FireBaseService.isCommentUpdated">Thank you! Your message has been
+            <p class="text-red" ng-if="blog.FireBaseService.isCommentUpdated">Thank you! Your message has been
               received.</p>
           </form>
         </div>

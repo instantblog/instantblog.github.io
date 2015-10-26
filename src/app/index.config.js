@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider, toastrConfig,$sceDelegateProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -17,7 +17,12 @@
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
 
-
+    $sceDelegateProvider.resourceUrlWhitelist(
+      [
+        'self',
+        'https://scontent.cdninstagram.com/**'
+      ]
+    );
 
   }
 

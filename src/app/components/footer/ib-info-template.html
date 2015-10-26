@@ -20,8 +20,7 @@
 
         <md-content>
           <div class="text-center text-3x">
-            http://instantblog.me/
-            <acme-malarkey extra-values="['mynameisyan', 'instagram', 'awesome_name']"></acme-malarkey>
+            http://instantblog.me/<acme-malarkey extra-values="['mynameisyan','instagram','you_name']"></acme-malarkey>
           </div>
         </md-content>
       </div>
@@ -93,7 +92,7 @@
         </div>
 
         <md-button class="md-raised" ng-click="toast.FireBaseService.addToComments(toast)"> Submit Comments</md-button>
-        <div class="text-center">
+        <div>
           <small class="text-red" ng-if="toast.FireBaseService.isCommentUpdated">Thank you! Your message has been
             received.
           </small>

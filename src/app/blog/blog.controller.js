@@ -16,6 +16,8 @@
     vm.nextUrl = CurrentInstaUser.nextUrl || null;
     vm.FireBaseService = FireBaseService;
     vm.scrollTo = scrollTo;
+    vm.resetComment = resetComment;
+
 
     //FireBaseService.initializeStat();
 
@@ -30,6 +32,13 @@
       $anchorScroll();
     }
 
+    function resetComment(){
+      vm.comment={
+        'name':null,
+        'email':null,
+        'message':null
+      }
+    }
 
     function loadMore() {
       InstagramApiServices.loadMore(vm.nextUrl).then(function (response) {
